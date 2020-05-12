@@ -14,6 +14,8 @@ html,body,#root {
   background-color: #DEDEDE;
   flex: 1;
 }
+
+/* Navigation section */
 .navbar {
   flex: auto 0 0;
   border-bottom: solid 1px #333;
@@ -29,6 +31,21 @@ html,body,#root {
 .navbar li:hover {
   background-color: #ABABAB;
 }
+
+.locale-bar {
+  background: #ABABAB;
+  padding: 0.5em 1em 0.5em 150px;
+  font-size: 10pt;
+}
+.locale-bar label {
+  padding: 0.5em;
+  margin-right: 1em;
+}
+.locale-bar input {
+  padding: 0.5em;
+}
+
+/* Main section */
 .main-content {
   margin: 1em;
   flex: 1;
