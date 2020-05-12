@@ -1,6 +1,7 @@
 import React from "react";
 import MeasurementList from "./measurement-list";
 import AddMeasurementForm from "./add-measurement-form";
+import moment from "moment";
 
 export default class MeasurementListing extends React.Component {
 
@@ -15,7 +16,7 @@ export default class MeasurementListing extends React.Component {
 
     render() {
         return <>
-            <MeasurementList measurements={this.state.measurements}/>
+            <MeasurementList measurements={this.state.measurements} timeZone={"US/Pacific"}/>
             <AddMeasurementForm onMeasurementAdd={this.onMeasurementAdded}/>
         </>;
     }
@@ -24,7 +25,7 @@ export default class MeasurementListing extends React.Component {
         const {measurements, lastKey} = this.state;
         const newMeasurements = [
             ...measurements,
-            {"key": lastKey + 1, "value": value, "unit": unit}
+            {"key": lastKey + 1, "value": value, "unit": unit, "submissionTime": moment()}
         ];
         this.setState({measurements: newMeasurements, lastKey: lastKey + 1})
     }
