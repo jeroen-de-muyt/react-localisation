@@ -7,13 +7,14 @@ export default class MeasurementList extends React.Component {
     render() {
         const {measurements} = this.props;
         return <ul className="measurement-list">
-            {measurements.map((measurement) => <MeasurementItem {...measurement}/>)}
+            {measurements.map((measurement) => <MeasurementItem key={measurement.key} {...measurement}/>)}
         </ul>;
     }
 }
 
 MeasurementList.propTypes = {
     measurements: PropTypes.arrayOf(PropTypes.shape({
+        key: PropTypes.number.isRequired,
         value: PropTypes.number.isRequired,
         unit: PropTypes.string.isRequired
     })).isRequired

@@ -7,7 +7,8 @@ export default class MeasurementListing extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            measurements: []
+            measurements: [],
+            lastKey: 0
         }
         this.onMeasurementAdded = this.onMeasurementAdded.bind(this);
     }
@@ -20,10 +21,11 @@ export default class MeasurementListing extends React.Component {
     }
 
     onMeasurementAdded({value, unit}) {
+        const {measurements, lastKey} = this.state;
         const newMeasurements = [
-            ...this.state.measurements,
-            {"value": value, "unit": unit}
+            ...measurements,
+            {"key": lastKey + 1, "value": value, "unit": unit}
         ];
-        this.setState({measurements: newMeasurements})
+        this.setState({measurements: newMeasurements, lastKey: lastKey + 1})
     }
 }
