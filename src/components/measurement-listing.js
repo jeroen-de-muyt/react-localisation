@@ -2,6 +2,7 @@ import React from "react";
 import MeasurementList from "./measurement-list";
 import AddMeasurementForm from "./add-measurement-form";
 import moment from "moment";
+import PropTypes from 'prop-types';
 
 export default class MeasurementListing extends React.Component {
 
@@ -16,7 +17,7 @@ export default class MeasurementListing extends React.Component {
 
     render() {
         return <>
-            <MeasurementList measurements={this.state.measurements} timeZone={"US/Pacific"}/>
+            <MeasurementList measurements={this.state.measurements} timezone={this.props.timezone}/>
             <AddMeasurementForm onMeasurementAdd={this.onMeasurementAdded}/>
         </>;
     }
@@ -29,4 +30,8 @@ export default class MeasurementListing extends React.Component {
         ];
         this.setState({measurements: newMeasurements, lastKey: lastKey + 1})
     }
+}
+
+MeasurementListing.propTypes = {
+    timezone: PropTypes.string.isRequired
 }

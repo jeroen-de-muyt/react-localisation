@@ -4,14 +4,14 @@ import Moment from "react-moment";
 import 'moment-timezone';
 
 const MeasurementItem = ({value, unit, submissionTime, timezone}) => <li>{value} {unit}, added
-    at <Moment local={true} tz={timezone} format="LLL">{submissionTime}</Moment></li>;
+    at <Moment local={true} tz={timezone} format="lll">{submissionTime}</Moment></li>;
 
 export default class MeasurementList extends React.Component {
     render() {
-        const {measurements, timeZone} = this.props;
+        const {measurements, timezone} = this.props;
         return <ul className="measurement-list">
             {measurements.map((measurement) => <MeasurementItem key={measurement.key} {...measurement}
-                                                                timezone={timeZone}/>)}
+                                                                timezone={timezone}/>)}
         </ul>;
     }
 }
@@ -23,5 +23,5 @@ MeasurementList.propTypes = {
         unit: PropTypes.string.isRequired,
         submissionTime: PropTypes.object.isRequired
     })).isRequired,
-    timeZone: PropTypes.string.isRequired
+    timezone: PropTypes.string.isRequired
 }
