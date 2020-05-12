@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Moment from "react-moment";
 import 'moment-timezone';
+import convert from 'convert-units';
 
-const MeasurementItem = ({value, unit, submissionTime, timezone}) => <li>{value} {unit}, added
+const MeasurementItem = ({value, unit, submissionTime, timezone}) => <li>{convert(value).from(unit).to('kg')} kg, added
     at <Moment local={true} tz={timezone} format="lll">{submissionTime}</Moment></li>;
 
 export default class MeasurementList extends React.Component {
