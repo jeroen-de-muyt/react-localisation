@@ -3,6 +3,7 @@ import {Trans, withTranslation} from 'react-i18next'
 import './App.css';
 import MeasurementListing from "./components/measurement-listing";
 import SetLocale from "./components/set-locale";
+import LocaleConfiguration from "./components/locale-configuration";
 
 const NavigationBar = ({onLocaleMenuClicked}) => <ul className="navbar">
     <li>App</li>
@@ -26,6 +27,7 @@ class App extends React.Component {
         const {locale, timezone, localeBarVisible} = this.state;
         return <div className="wrapper">
             <NavigationBar onLocaleMenuClicked={this.toggleLocaleMenu}/>
+            <LocaleConfiguration visible={false}/>
             <SetLocale visible={localeBarVisible} locale={locale}
                        onLocaleChange={this.onChangeLocale} onTimezoneChange={this.onChangeTimezone}
                        timezone={timezone}/>

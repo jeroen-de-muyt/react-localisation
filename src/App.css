@@ -44,6 +44,12 @@ html,body,#root {
 .locale-bar input {
   padding: 0.5em;
 }
+.locale-bar select, .locale-bar option {
+  padding: 0 0.25em;
+}
+table th {
+  padding: 0.5em;
+}
 
 /* Main section */
 .main-content {

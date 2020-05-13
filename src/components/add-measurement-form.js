@@ -13,8 +13,6 @@ export default class AddMeasurementForm extends React.Component {
     }
 
     render() {
-        console.log(convert().measures())
-        console.log(convert().list("mass"))
         const {amount} = this.state;
         return <div className="measurement-add">
             <input type="number" value={amount} onChange={e => this.updateAmount(e.target)}/>

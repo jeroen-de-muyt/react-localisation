@@ -1,0 +1,21 @@
+{
+  "locales": {
+    "Asia/Tokyo": {
+      "massUnit": "g",
+      "lengthUnit": "cm"
+    },
+    "Europe/Brussels": {
+      "massUnit": "kg",
+      "lengthUnit": "m"
+    },
+    "Europe/London": {
+      "massUnit": "kg",
+      "lengthUnit": "m"
+    },
+    "US/Pacific": {
+      "massUnit": "lb",
+      "lengthUnit": "ft"
+    }
+  },
+  "backendLocale": "Europe/Brussels"
+}
