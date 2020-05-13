@@ -76,6 +76,10 @@ table th {
   border-top: none;
   padding: 0.5em;
 }
+.measurement-add label {
+  padding: 0.5em;
+  margin-right: 1em;
+}
 button, select, input {
   border: solid 1px #ABABAB;
   padding: 0.5em 1em;
