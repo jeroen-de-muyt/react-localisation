@@ -14,7 +14,8 @@ export default class SetLocale extends React.Component {
         const {visible, locale, onLocaleChange} = this.props;
         if (visible) {
             return <div className="locale-bar">
-                {Object.keys(localeConfig.locales).map(l => <TimezoneSelector locale={l}
+                {Object.keys(localeConfig.locales).map(l => <TimezoneSelector key={l}
+                                                                              locale={l}
                                                                               activeLocale={locale}
                                                                               onLocaleChange={onLocaleChange}/>)}
             </div>
