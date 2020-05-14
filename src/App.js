@@ -4,6 +4,8 @@ import './App.css';
 import MeasurementListing from "./components/measurement-listing";
 import SetLocale from "./components/set-locale";
 import LocaleConfiguration from "./components/locale-configuration";
+import moment from "moment";
+import 'moment-timezone';
 
 const NavigationBar = ({onLocaleMenuClicked}) => <ul className="navbar">
     <li>App</li>
@@ -14,7 +16,7 @@ class App extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            locale: "Europe/Brussels",
+            locale: moment.tz.guess(),
             localeBarVisible: false
         }
         this.toggleLocaleMenu = this.toggleLocaleMenu.bind(this);
@@ -40,6 +42,7 @@ class App extends React.Component {
     }
 
     onChangeLocale({value}) {
+        moment.tz.setDefault(value);
         this.setState({locale: value})
     }
 }
