@@ -31,7 +31,7 @@ class App extends React.Component {
             <SetLocale visible={localeBarVisible} onLocaleChange={this.onChangeLocale} locale={locale}/>
             <div className="main-content">
                 <h1><Trans>measurementList</Trans></h1>
-                <MeasurementListing timezone={locale}/>
+                <MeasurementListing timezone={locale} />
             </div>
         </div>;
     }

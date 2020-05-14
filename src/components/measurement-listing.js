@@ -16,9 +16,10 @@ export default class MeasurementListing extends React.Component {
     }
 
     render() {
+        const {timezone} = this.props;
         return <>
-            <MeasurementList measurements={this.state.measurements} timezone={this.props.timezone}/>
-            <AddMeasurementForm onMeasurementAdd={this.onMeasurementAdded} locale={this.props.timezone}/>
+            <MeasurementList measurements={this.state.measurements} timezone={timezone}/>
+            <AddMeasurementForm onMeasurementAdd={this.onMeasurementAdded} locale={timezone}/>
         </>;
     }
 

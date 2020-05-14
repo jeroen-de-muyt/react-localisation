@@ -1,18 +1,22 @@
 {
   "locales": {
     "Asia/Tokyo": {
+      "intlFormat": "jp",
       "massUnit": "g",
       "lengthUnit": "cm"
     },
     "Europe/Brussels": {
+      "intlFormat": "nl-be",
       "massUnit": "kg",
       "lengthUnit": "m"
     },
     "Europe/London": {
+      "intlFormat": "en-gb",
       "massUnit": "kg",
       "lengthUnit": "m"
     },
     "US/Pacific": {
+      "intlFormat": "us",
       "massUnit": "lb",
       "lengthUnit": "ft"
     }
