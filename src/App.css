@@ -75,6 +75,8 @@ table th {
   border: solid 1px #333;
   border-top: none;
   padding: 0.5em;
+  display: flex;
+  flex-direction: row;
 }
 .measurement-add label {
   padding: 0.5em;
@@ -83,4 +85,20 @@ table th {
 button, select, input {
   border: solid 1px #ABABAB;
   padding: 0.5em 1em;
+}
+
+.dropdown-list {
+  background-color: #DEDEDE;
+  border: solid 1px #888;
+  width: 50px;
+  position: absolute;
+  bottom: 3.5em;
+  left: 14em;
+}
+.dropdown-list li {
+  list-style-type: none;
+  padding: 0.5em;
+}
+.dropdown-list li:hover {
+  background-color: #ABABAB;
 }

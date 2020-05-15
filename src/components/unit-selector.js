@@ -1,10 +1,14 @@
 import * as React from "react";
+import {Fragment} from "react";
 import PropTypes from 'prop-types';
 import convert from 'convert-units';
 
-const SelectUnit = ({unit, measure, onUnitChange}) => <select value={unit} onChange={e => onUnitChange(e.target)}>
-    {convert().possibilities(measure).map(u => <option key={u} value={u}>{u}</option>)}
-</select>
+const SelectUnit = ({unit, measure, onUnitChange}) => <Fragment>
+    <label>{unit}</label>
+    <ul className="dropdown-list">
+        {convert().possibilities(measure).map(u => <li key={u} onClick={e => onUnitChange({value: u})}>{u}</li>)}
+    </ul>
+</Fragment>
 
 const UnitLabel = ({unit, onUnitEdit}) => <label onClick={e => onUnitEdit()}>{unit}</label>;
 
